@@ -1,0 +1,5 @@
+Welcome to MyShell!
+myshell:/app> echo hi >a.txt; echo bye >>a.txt; cat a.txt
+hi >a.txt; echo bye >>a.txt; cat a.txt
+myshell:/app> 
+Exiting MyShell...

@@ -1,0 +1,5 @@
+Welcome to MyShell!
+myshell:/app> cat pipe.txt | grep a | wc -l
+2
+myshell:/app> 
+Exiting MyShell...

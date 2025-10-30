@@ -1,0 +1,5 @@
+Welcome to MyShell!
+myshell:/app> echo hello world
+hello world
+myshell:/app> 
+Exiting MyShell...

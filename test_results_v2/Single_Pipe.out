@@ -1,0 +1,6 @@
+Welcome to MyShell!
+myshell:/app> cat pipe.txt | grep a
+a
+apple
+myshell:/app> 
+Exiting MyShell...

@@ -1,0 +1,5 @@
+Welcome to MyShell!
+myshell:/app> echo -e 'z\ny\nx' | sort
+-e 'z\ny\nx'
+myshell:/app> 
+Exiting MyShell...

@@ -1,0 +1,5 @@
+Welcome to MyShell!
+myshell:/app> echo test123 > out.txt; cat out.txt
+test123 cat out.txt
+myshell:/app> 
+Exiting MyShell...

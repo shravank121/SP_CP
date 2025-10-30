@@ -1,0 +1,5 @@
+Welcome to MyShell!
+myshell:/app> cat /root/secretfile
+cat: /root/secretfile: No such file or directory
+myshell:/app> 
+Exiting MyShell...

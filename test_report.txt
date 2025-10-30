@@ -1,0 +1,102 @@
+======== MyShell Extended Test Report ========
+Run Time: Wed Oct 29 19:15:32 UTC 2025
+===============================================
+[Echo]
+Command(s): echo hello world
+✅ PASS — Pattern matched: hello world
+⏱️  Time: 62ms
+-----------------------------------------------
+[PWD]
+Command(s): pwd
+✅ PASS — Pattern matched: /app
+⏱️  Time: 40ms
+-----------------------------------------------
+[CD]
+Command(s): cd /; pwd
+❌ FAIL — Pattern '^/$' not found.
+First few lines:
+Welcome to MyShell!
+myshell:/app> cd /; pwd
+cd: No such file or directory
+myshell:/app> 
+Exiting MyShell...
+⏱️  Time: 37ms
+-----------------------------------------------
+[Input_Redirection]
+Command(s): cat < redir_in.txt
+✅ PASS — Pattern matched: redirect me
+⏱️  Time: 48ms
+-----------------------------------------------
+[Output_Redirection]
+Command(s): echo test123 > out.txt; cat out.txt
+✅ PASS — Pattern matched: test123
+⏱️  Time: 24ms
+-----------------------------------------------
+[Append_Redirection]
+Command(s): echo line1 > file.txt; echo line2 >> file.txt; cat file.txt
+✅ PASS — Pattern matched: line1.*line2
+⏱️  Time: 18ms
+-----------------------------------------------
+[Single_Pipe]
+Command(s): cat pipe.txt | grep a
+✅ PASS — Pattern matched: a
+⏱️  Time: 18ms
+-----------------------------------------------
+[Multi_Pipe]
+Command(s): cat pipe.txt | grep a | wc -l
+✅ PASS — Pattern matched: [23]
+⏱️  Time: 17ms
+-----------------------------------------------
+[Pipe_With_Sort]
+Command(s): echo -e 'z\ny\nx' | sort
+✅ PASS — Pattern matched: x
+⏱️  Time: 29ms
+-----------------------------------------------
+[Background_Job]
+Command(s): sleep 1 &
+✅ PASS — Pattern matched: (&|PID|myshell)
+⏱️  Time: 39ms
+-----------------------------------------------
+[Invalid_Command]
+Command(s): wrongcmd
+✅ PASS — Pattern matched: (execvp|not found)
+⏱️  Time: 17ms
+-----------------------------------------------
+[Permission_Error]
+Command(s): cat /root/secretfile
+❌ FAIL — Pattern '(Permission|denied)' not found.
+First few lines:
+Welcome to MyShell!
+myshell:/app> cat /root/secretfile
+cat: /root/secretfile: No such file or directory
+myshell:/app> 
+Exiting MyShell...
+⏱️  Time: 23ms
+-----------------------------------------------
+[History]
+Command(s): ls; pwd; history
+✅ PASS — Pattern matched: history
+⏱️  Time: 30ms
+-----------------------------------------------
+[Chaining]
+Command(s): cd /tmp; pwd
+✅ PASS — Pattern matched: /tmp
+⏱️  Time: 32ms
+-----------------------------------------------
+[Long_Command]
+Command(s): echo xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho xecho x
+✅ PASS — Pattern matched: x
+⏱️  Time: 37ms
+-----------------------------------------------
+[Multiple_Pipes_Long]
+Command(s): seq 1 100 | grep 5 | grep 0 | wc -l
+✅ PASS — Pattern matched: [1-9]
+⏱️  Time: 36ms
+-----------------------------------------------
+[Multiple_Redirections]
+Command(s): echo hi >a.txt; echo bye >>a.txt; cat a.txt
+✅ PASS — Pattern matched: hi.*bye
+⏱️  Time: 51ms
+-----------------------------------------------
+===============================================
+All extended tests completed.
